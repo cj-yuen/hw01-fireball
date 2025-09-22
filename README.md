@@ -1,5 +1,17 @@
 # [Project 1: Noise](https://github.com/CIS-566-Fall-2022/hw01-fireball-base)
 
+## Description
+
+This project implements a dynamic, animated fireball using WebGL shaders and noise-based vertex displacement. The fireball is rendered on an icosphere and features realistic fire-like appearance with interactive controls and mouse-based deformation. The implementation combines multiple noise functions to create both large-scale deformation and fine detail, while maintaining smooth animation and realistic fire coloring.
+
+For my vertex shader, I implemented Worley noise as the primary noise function. Then I applied a rotation-based swirling animation. Afterwards, I implemented a multi-octave Worley noise that uses dat.GUI controlled octaves along with strength for displacement amplitdude. Then I applied height-dependent scaling for a more natural flame-like shape. Finally I added a pulsing displacement for the "roiling" effect of flames.
+
+For my fragment shader, I used a custom fireGradient() function maps to transition from yellow core → orange → red outer regions using smoothstep for blending with colors based on fs_Height vertex displacment height. I added flickering effect using fractal noise, radial distance-based glow transparency falloff, and alpha controls using dat.GUI.
+
+Both shaders are animated using a uniform time variable u_Time
+
+I also implemented mouse interactivity, creating a directional "push" effect based on mouse position. 
+
 ## Objective
 
 Get comfortable with using WebGL and its shaders to generate an interesting 3D, continuous surface using a multi-octave noise algorithm.
