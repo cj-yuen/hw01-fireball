@@ -12,6 +12,7 @@ Both shaders are animated using a uniform time variable u_Time
 
 I also implemented mouse interactivity, creating a directional "push" effect based on mouse position. 
 
+
 ## Objective
 
 Get comfortable with using WebGL and its shaders to generate an interesting 3D, continuous surface using a multi-octave noise algorithm.
